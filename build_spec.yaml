@@ -18,12 +18,17 @@ env:
 
 steps:
   - type: Command
-    name: "multistage build"
-    timeoutInSeconds: 4000
+    name: "Multistage Build Java"
+    timeoutInSeconds: 2000
     command: |
       cd ${OCI_PRIMARY_SOURCE_DIR}
       docker version
       docker build -f DockerfileJava -t java_base . 
 
-  # Last command is used to get the commit hash using GIT ID ,its a hack while there wont be any default commit hash by manual Run.
-  # Until its fixed we can fetch the same via GIT Command.
+  - type: Command
+    name: "Multistage Build NodeJs"
+    timeoutInSeconds: 4000
+    command: |
+      cd ${OCI_PRIMARY_SOURCE_DIR}/nodesample
+      docker version
+      docker build -f DockerfileJava -t node_base .

@@ -43,3 +43,5 @@ Allow dynamic-group <NAME OF THE DYNAMIC GROUP> to manage ons-topics in compartm
 
 - Add a line to `README.md` and push the content back to code repo .This will trigger a build job automatically.
 
+![](images/oci-devops-trigger-new.png)
+
