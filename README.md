@@ -52,6 +52,6 @@ Allow dynamic-group <NAME OF THE DYNAMIC GROUP> to manage ons-topics in compartm
 
 ### Contributor 
 
-Author: Rahul M R.
-Collaborators : NA
-Last release: April 2023
+- Author: Rahul M R.
+- Collaborators : NA
+- Last release: April 2023
