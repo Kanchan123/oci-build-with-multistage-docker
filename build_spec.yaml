@@ -22,7 +22,6 @@ steps:
     timeoutInSeconds: 2000
     command: |
       cd ${OCI_PRIMARY_SOURCE_DIR}
-      docker version
       docker build -f DockerfileJava -t java_base . 
 
   - type: Command
@@ -30,5 +29,4 @@ steps:
     timeoutInSeconds: 4000
     command: |
       cd ${OCI_PRIMARY_SOURCE_DIR}/nodesample
-      docker version
-      docker build -f DockerfileJava -t node_base .
+      docker build -t node_base .

@@ -45,3 +45,10 @@ Allow dynamic-group <NAME OF THE DYNAMIC GROUP> to manage ons-topics in compartm
 
 ![](images/oci-devops-trigger-new.png)
 
+- Follow the build run. Here we are using a `java` and a `nodejs` sample with multi stage docker build.The build steps and stages can be expanded /updated accordingly. This sample is made only for a demo purpose.
+
+### Contributor 
+
+Author: Rahul M R.
+Collaborators : NA
+Last release: April 2023

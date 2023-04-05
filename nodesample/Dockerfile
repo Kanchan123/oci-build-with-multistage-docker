@@ -1,22 +1,12 @@
-# Build Stage 1
-# This build created a staging docker image 
-#
-FROM node:10.15.2-alpine AS dev
-WORKDIR /usr/src/app
-COPY package.json ./
-COPY .babelrc ./
+FROM node:10 as build
+LABEL description="Sample NPM multi build dockerfile"
+WORKDIR /src
+COPY package*.json .
 RUN npm install
-COPY ./src ./src
-RUN npm run build
+COPY . .
 
-# Build Stage 2
-# This build takes the production build from staging build
-#
-FROM node:10.15.2-alpine
-WORKDIR /usr/src/app
-COPY package.json ./
-COPY .babelrc ./
-RUN npm install
-COPY --from=dev /usr/src/app/dist ./dist
-EXPOSE 4002
-CMD npm start
+FROM node:10-slim
+WORKDIR /src
+COPY --from=build /src .
+EXPOSE 8080
+CMD ["node", "index.js"]
